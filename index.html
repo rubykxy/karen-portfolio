@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --beige: #f5e0e0;
+            --beige: #eadfdd;
             --dusty-pink: #D8A7B1;
             --sky-blue: #B2C2D1;
             --olive: #8E9775;
@@ -217,7 +217,7 @@
     <!-- Hero Section -->
     <section class="relative w-full h-screen flex items-center justify-center pt-24">
         <!-- Cinematic Image Background -->
-        <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="absolute inset-0 z-0 overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);">
             <img src="img/hero-sketch.jpg?v=2" alt="Architecture Sketch" class="w-full h-full object-cover object-center animate-cinematic-reveal" style="opacity: 0.75; filter: brightness(1.15) saturate(0.7);">
             <!-- Dusty Pink Warm Overlay -->
             <div class="absolute inset-0" style="background: rgba(216,167,177,0.35);"></div>
@@ -239,14 +239,9 @@
         </div>
     </section>
 
-    <!-- Seamless gradient bridge: hero → page background -->
-    <div style="height: 400px; margin-top: -400px; position: relative; z-index: 5; pointer-events: none; background: linear-gradient(to bottom, transparent 0%, rgba(245,224,224,0.15) 20%, rgba(245,224,224,0.45) 45%, rgba(245,224,224,0.75) 65%, rgba(245,224,224,0.92) 80%, #f5e0e0 100%);"></div>
-
-
-
     <!-- Projects Grid -->
 
-    <section id="projects" class="pt-4 pb-10 px-6 relative z-10">
+    <section id="projects" class="pt-20 pb-10 px-6 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
                 <h2 class="text-4xl md:text-6xl">Projects</h2>
