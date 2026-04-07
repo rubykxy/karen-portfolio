@@ -153,11 +153,11 @@
         }
 
         @keyframes cinematicReveal {
-            0% { transform: scale(1.15); filter: blur(12px); }
-            100% { transform: scale(1); filter: blur(0px); }
+            0% { transform: scale(1.08); filter: blur(14px) brightness(1.3); opacity: 0.6; }
+            100% { transform: scale(1); filter: blur(0px) brightness(1); opacity: 1; }
         }
         .animate-cinematic-reveal {
-            animation: cinematicReveal 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: cinematicReveal 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
         @keyframes textFadeUp {
@@ -218,13 +218,13 @@
     <section class="relative w-full h-screen overflow-hidden flex items-center justify-center pt-24">
         <!-- Cinematic Image Background -->
         <div class="absolute inset-0 z-0">
-            <img src="img/hero-sketch.jpg" alt="Architecture Sketch" class="w-full h-full object-cover object-center animate-cinematic-reveal" style="filter: brightness(1.1) saturate(0.85);">
-            <!-- Soft Dusty Pink Overlay -->
-            <div class="absolute inset-0 bg-dusty-pink mix-blend-multiply opacity-15"></div>
-            <!-- Light Hazy Wash -->
-            <div class="absolute inset-0 bg-white/30"></div>
-            <!-- Subtle vignette -->
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-beige/80"></div>
+            <img src="img/hero-sketch.jpg?v=2" alt="Architecture Sketch" class="w-full h-full object-cover object-center animate-cinematic-reveal" style="opacity: 0.75; filter: brightness(1.15) saturate(0.7);">
+            <!-- Dusty Pink Warm Overlay -->
+            <div class="absolute inset-0" style="background: rgba(216,167,177,0.35);"></div>
+            <!-- Soft White Haze to fade the image -->
+            <div class="absolute inset-0 bg-white/40"></div>
+            <!-- Bottom gradient melting into page -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#F5F5F0]"></div>
         </div>
 
         <!-- Centered Minimal Text -->
