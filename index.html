@@ -218,20 +218,22 @@
     <section class="relative w-full h-screen overflow-hidden flex items-center justify-center pt-24">
         <!-- Cinematic Image Background -->
         <div class="absolute inset-0 z-0">
-            <img src="img/hero-image2.png" alt="Architecture" class="w-full h-full object-cover object-top animate-cinematic-reveal">
+            <img src="img/hero-image2.png" alt="Architecture" class="w-full h-full object-cover object-top animate-cinematic-reveal" style="filter: brightness(1.1) saturate(0.85);">
             <!-- Soft Dusty Pink Overlay -->
-            <div class="absolute inset-0 bg-dusty-pink mix-blend-multiply opacity-40"></div>
-            <!-- Vignette Fade to Beige base -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-beige"></div>
+            <div class="absolute inset-0 bg-dusty-pink mix-blend-multiply opacity-15"></div>
+            <!-- Light Hazy Wash -->
+            <div class="absolute inset-0 bg-white/30"></div>
+            <!-- Subtle vignette -->
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-beige/80"></div>
         </div>
 
         <!-- Centered Minimal Text -->
         <div class="relative z-10 text-center px-6 flex flex-col items-center animate-text-fade-up max-w-4xl mx-auto">
-            <h1 class="text-6xl md:text-8xl lg:text-9xl leading-[0.9] text-white font-medium drop-shadow-md">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl leading-[0.9] text-ink font-medium">
                 Designing <br />
                 <span class="italic font-light">Through Exploration</span>
             </h1>
-            <p class="mt-8 text-lg font-light leading-relaxed max-w-lg text-white/90 drop-shadow-sm mx-auto">
+            <p class="mt-8 text-lg font-light leading-relaxed max-w-lg text-ink/80 mx-auto">
                 Designing through ideas, material exploration, and the relationship between space, atmosphere,
                 and experience.
             </p>
