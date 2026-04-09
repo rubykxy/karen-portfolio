@@ -83,20 +83,25 @@
     <!-- Main Content Flow -->
     <main class="pt-40 pb-32 px-6 max-w-5xl mx-auto space-y-32">
         
-        <!-- Header -->
-        <header class="text-center space-y-6">
-            <p class="text-[10px] uppercase tracking-[0.3em] text-terracotta font-medium">Architectural Exploration</p>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl leading-tight font-serif">
-                Palimpsest
-            </h1>
-            <p class="text-lg font-light text-ink/50 tracking-wide">
-                A study in layered urbanism and atmospheric depth
-            </p>
-        </header>
+        <!-- Header & Main Rendering (2-Column Layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Column: Text -->
+            <header class="space-y-6 text-left">
+                <p class="text-[10px] uppercase tracking-[0.3em] text-terracotta font-medium">Karen Lopez</p>
+                <h1 class="text-6xl md:text-7xl lg:text-8xl leading-none font-serif">
+                    Palimpsest
+                </h1>
+                <p class="text-lg font-light text-ink/60 tracking-wide max-w-md">
+                    A study in layered urbanism and atmospheric depth
+                </p>
+            </header>
 
-        <!-- Main Rendering -->
-        <div class="max-w-3xl mx-auto w-full relative shadow-lg overflow-hidden bg-white/50 border border-black/5 rounded-none md:rounded-sm">
-            <img src="img/project1/palimpsest_hero_v3.png" alt="Main Rendering" class="w-full h-auto object-contain">
+            <!-- Right Column: Image -->
+            <div class="w-full relative shadow-lg overflow-hidden bg-white/50 border border-black/5 rounded-none md:rounded-sm">
+                <img src="img/project1/palimpsest_hero_v3.png" alt="Main Rendering" class="w-full h-auto object-contain">
+            </div>
+
         </div>
 
         <!-- Project Narrative -->
