@@ -62,6 +62,18 @@
         html {
             scroll-behavior: smooth;
         }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 640px) {
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -117,7 +129,7 @@
         <!-- Formation -->
         <div class="pt-20 border-t border-black/5">
             <h3 class="text-[10px] uppercase tracking-[0.3em] text-ink/50 font-medium mb-16">01 / Formulation</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <div class="section-grid">
                 <div class="space-y-6">
                     <div class="w-full shadow-lg overflow-hidden rounded-none md:rounded-sm bg-[#FAF0EF]">
                         <img src="img/project2/helixapark2.png?v=3" alt="Site Plan" class="w-full h-auto">
@@ -134,7 +146,7 @@
         <!-- Spatial Organization -->
         <div class="pt-20 border-t border-black/5">
             <h3 class="text-[10px] uppercase tracking-[0.3em] text-ink/50 font-medium mb-16">02 / Spatial Organization</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <div class="section-grid">
                 <div class="space-y-6">
                     <div class="w-full shadow-lg overflow-hidden rounded-none md:rounded-sm bg-[#FAF0EF]">
                         <img src="img/project2/helixapark4.png?v=2" alt="Ground Floor Landscape Integration" class="w-full h-auto">
@@ -151,7 +163,7 @@
         <!-- Atmosphere & Details -->
         <div class="pt-20 border-t border-black/5">
             <h3 class="text-[10px] uppercase tracking-[0.3em] text-ink/50 font-medium mb-16">03 / Atmosphere & Details</h3>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <div class="section-grid">
                 <div class="space-y-6">
                     <div class="w-full shadow-lg overflow-hidden rounded-none md:rounded-sm bg-[#FAF0EF]">
                         <img src="img/project2/helixapark6.png?v=2" alt="Central Plaza Perspective" class="w-full h-auto">
