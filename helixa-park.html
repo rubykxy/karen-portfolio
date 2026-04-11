@@ -252,50 +252,68 @@
     <script>
         lucide.createIcons();
 
-        // Carousel logic
+        // Live-drag Carousel
         const carousels = {};
 
         function initCarousel(id, count) {
             const track = document.getElementById(id + '-track');
-            carousels[id] = { index: 0, count };
+            const c = { index: 0, count, startX: 0, currentX: 0, dragging: false };
+            carousels[id] = c;
 
-            // Touch/swipe support
-            let startX = 0;
-            track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', e => {
-                const diff = startX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) carouselMove(id, diff > 0 ? 1 : -1);
-            });
+            function dragStart(x) {
+                c.dragging = true;
+                c.startX = x;
+                c.currentX = 0;
+                track.style.transition = 'none';
+                track.style.cursor = 'grabbing';
+            }
 
-            // Mouse drag support
-            let dragging = false, mouseStartX = 0;
-            track.addEventListener('mousedown', e => { dragging = true; mouseStartX = e.clientX; track.style.cursor = 'grabbing'; });
-            window.addEventListener('mouseup', e => {
-                if (!dragging) return;
-                dragging = false;
-                track.style.cursor = '';
-                const diff = mouseStartX - e.clientX;
-                if (Math.abs(diff) > 40) carouselMove(id, diff > 0 ? 1 : -1);
-            });
+            function dragMove(x) {
+                if (!c.dragging) return;
+                c.currentX = x - c.startX;
+                const base = -c.index * track.parentElement.offsetWidth;
+                track.style.transform = `translateX(${base + c.currentX}px)`;
+            }
+
+            function dragEnd() {
+                if (!c.dragging) return;
+                c.dragging = false;
+                track.style.cursor = 'grab';
+                track.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                const threshold = track.parentElement.offsetWidth * 0.2;
+                if (c.currentX < -threshold && c.index < c.count - 1) c.index++;
+                else if (c.currentX > threshold && c.index > 0) c.index--;
+                snapCarousel(id);
+            }
+
+            // Mouse
+            track.addEventListener('mousedown', e => { e.preventDefault(); dragStart(e.clientX); });
+            window.addEventListener('mousemove', e => dragMove(e.clientX));
+            window.addEventListener('mouseup', () => dragEnd());
+
+            // Touch
+            track.addEventListener('touchstart', e => dragStart(e.touches[0].clientX), { passive: true });
+            track.addEventListener('touchmove', e => dragMove(e.touches[0].clientX), { passive: true });
+            track.addEventListener('touchend', () => dragEnd());
+
+            track.style.cursor = 'grab';
         }
 
-        function carouselMove(id, dir) {
+        function snapCarousel(id) {
             const c = carousels[id];
-            c.index = (c.index + dir + c.count) % c.count;
-            updateCarousel(id);
-        }
-
-        function carouselGoTo(id, idx) {
-            carousels[id].index = idx;
-            updateCarousel(id);
-        }
-
-        function updateCarousel(id) {
-            const c = carousels[id];
-            document.getElementById(id + '-track').style.transform = `translateX(-${c.index * 100}%)`;
+            const track = document.getElementById(id + '-track');
+            track.style.transform = `translateX(-${c.index * track.parentElement.offsetWidth}px)`;
             document.querySelectorAll(`#${id}-dots .carousel-dot`).forEach((dot, i) => {
                 dot.classList.toggle('active', i === c.index);
             });
+        }
+
+        function carouselGoTo(id, idx) {
+            const c = carousels[id];
+            const track = document.getElementById(id + '-track');
+            c.index = idx;
+            track.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            snapCarousel(id);
         }
 
         // Init carousels
