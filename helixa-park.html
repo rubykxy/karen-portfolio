@@ -74,6 +74,68 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Carousel */
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            background: #FAF0EF;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+        .carousel-track img {
+            min-width: 100%;
+            width: 100%;
+            height: auto;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s, opacity 0.2s;
+            opacity: 0.8;
+        }
+        .carousel-btn:hover { background: rgba(255,255,255,0.95); opacity: 1; }
+        .carousel-btn.prev { left: 12px; }
+        .carousel-btn.next { right: 12px; }
+        .carousel-btn svg { width: 16px; height: 16px; stroke: #2C2C2C; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .carousel-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(44,44,44,0.2);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .carousel-dot.active {
+            background: rgba(44,44,44,0.7);
+            transform: scale(1.3);
+        }
     </style>
 </head>
 
@@ -142,10 +204,22 @@
         <!-- Spatial Organization -->
         <div class="pt-20 border-t border-black/5">
             <h3 class="text-[10px] uppercase tracking-[0.3em] text-ink/50 font-medium mb-16">02 / Spatial Organization</h3>
-            <div class="space-y-8">
-                <div class="w-full shadow-lg overflow-hidden rounded-none md:rounded-sm bg-[#FAF0EF]">
-                    <img src="img/project2/helixapark5.png?v=2" alt="Elevated Pedestrian Pathways" class="w-full h-auto">
+            <!-- Swipeable Carousel -->
+            <div class="carousel-wrapper" id="spatial-carousel">
+                <div class="carousel-track" id="spatial-track">
+                    <img src="img/project2/fix1.png" alt="Spatial Hierarchy Diagram">
+                    <img src="img/project2/fix2.png" alt="Threshold Sequence Diagram">
                 </div>
+                <button class="carousel-btn prev" onclick="carouselMove('spatial', -1)" aria-label="Previous">
+                    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button class="carousel-btn next" onclick="carouselMove('spatial', 1)" aria-label="Next">
+                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+            <div class="carousel-dots" id="spatial-dots">
+                <div class="carousel-dot active" onclick="carouselGoTo('spatial', 0)"></div>
+                <div class="carousel-dot" onclick="carouselGoTo('spatial', 1)"></div>
             </div>
         </div>
 
@@ -181,6 +255,55 @@
 
     <script>
         lucide.createIcons();
+
+        // Carousel logic
+        const carousels = {};
+
+        function initCarousel(id, count) {
+            const track = document.getElementById(id + '-track');
+            carousels[id] = { index: 0, count };
+
+            // Touch/swipe support
+            let startX = 0;
+            track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) carouselMove(id, diff > 0 ? 1 : -1);
+            });
+
+            // Mouse drag support
+            let dragging = false, mouseStartX = 0;
+            track.addEventListener('mousedown', e => { dragging = true; mouseStartX = e.clientX; track.style.cursor = 'grabbing'; });
+            window.addEventListener('mouseup', e => {
+                if (!dragging) return;
+                dragging = false;
+                track.style.cursor = '';
+                const diff = mouseStartX - e.clientX;
+                if (Math.abs(diff) > 40) carouselMove(id, diff > 0 ? 1 : -1);
+            });
+        }
+
+        function carouselMove(id, dir) {
+            const c = carousels[id];
+            c.index = (c.index + dir + c.count) % c.count;
+            updateCarousel(id);
+        }
+
+        function carouselGoTo(id, idx) {
+            carousels[id].index = idx;
+            updateCarousel(id);
+        }
+
+        function updateCarousel(id) {
+            const c = carousels[id];
+            document.getElementById(id + '-track').style.transform = `translateX(-${c.index * 100}%)`;
+            document.querySelectorAll(`#${id}-dots .carousel-dot`).forEach((dot, i) => {
+                dot.classList.toggle('active', i === c.index);
+            });
+        }
+
+        // Init carousels
+        initCarousel('spatial', 2);
 
         // Scroll Effect for Nav
         window.addEventListener('scroll', () => {
