@@ -225,33 +225,40 @@
             <div class="absolute inset-0 bg-white/40"></div>
         </div>
 
-        <!-- Centered Minimal Text -->
-        <div class="relative z-10 text-center px-6 flex flex-col items-center animate-text-fade-up max-w-4xl mx-auto">
-            <h1 class="text-6xl md:text-8xl lg:text-9xl leading-[0.9] font-medium" style="color: #1a1a1a;">
-                I Explore Space <br />
-                <span class="italic font-light" style="color: #2C2C2C;">Through Designing and Making</span>
-            </h1>
-            <p class="mt-8 text-lg font-light leading-relaxed max-w-lg mx-auto" style="color: #2C2C2C;">
-                Designing through ideas, material exploration, and the relationship between space, atmosphere,
-                and experience.
-            </p>
-        </div>
+        <!-- Main Content: Centered Title + Side Teaser -->
+        <div class="relative z-10 w-full px-6 flex flex-col items-center animate-text-fade-up max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_auto_1.2fr] gap-x-16 items-center w-full">
+                <!-- Column 1: Left Spacer (to mathematically balance the teaser on the right) -->
+                <div class="hidden lg:block"></div>
 
-        <!-- About Me Teaser (Side Pinned) -->
-        <div class="absolute bottom-12 left-6 md:left-12 lg:left-20 z-20 animate-text-fade-up max-w-[280px]" style="animation-delay: 1.5s;">
-            <div class="flex items-start gap-4">
-                <div class="w-px h-12 bg-terracotta/40 mt-1 hidden md:block"></div>
-                <div>
-                    <p class="text-[10px] uppercase tracking-widest opacity-40 mb-2 font-medium">About Karen</p>
-                    <p class="text-sm font-light leading-relaxed opacity-60 mb-4">
-                        Architecture student exploring the boundaries of spatial experience and material narrative.
+                <!-- Column 2: Main Title & Description -->
+                <div class="text-center flex flex-col items-center">
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl leading-[0.9] font-medium" style="color: #1a1a1a;">
+                        I Explore Space <br />
+                        <span class="italic font-light" style="color: #2C2C2C;">Through Designing and Making</span>
+                    </h1>
+                    <p class="mt-8 text-lg font-light leading-relaxed max-w-lg mx-auto" style="color: #2C2C2C;">
+                        Designing through ideas, material exploration, and the relationship between space, atmosphere,
+                        and experience.
                     </p>
-                    <a href="#about" class="text-[10px] uppercase tracking-[0.2em] font-medium text-terracotta hover:opacity-70 transition-opacity flex items-center gap-2">
-                        Read more <i data-lucide="arrow-down" class="w-2.5 h-2.5"></i>
-                    </a>
+                </div>
+
+                <!-- Column 3: Refined About Teaser (Right side) -->
+                <div class="hidden lg:flex items-center border-l border-black/15 pl-12 h-fit animate-text-fade-up" style="animation-delay: 1.8s;">
+                    <div class="max-w-[260px] text-left py-2">
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-medium mb-4">Introduction</p>
+                        <p class="text-base font-light leading-relaxed mb-8 text-black opacity-100">
+                            Undergraduate architecture student investigating the future of spatial experience through material narrative and conceptual iteration.
+                        </p>
+                        <a href="#about" class="group relative inline-flex items-center gap-2 text-lg font-serif italic text-ink hover:text-terracotta transition-all duration-500">
+                            More about me <span class="group-hover:translate-x-2 transition-transform duration-500">→</span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-terracotta transition-all duration-500 group-hover:w-full"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- Projects Grid -->
