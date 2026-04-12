@@ -143,9 +143,17 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         .animate-float {
@@ -153,17 +161,35 @@
         }
 
         @keyframes cinematicReveal {
-            0% { transform: scale(1.08); filter: blur(14px) brightness(1.3); opacity: 0.6; }
-            100% { transform: scale(1); filter: blur(0px) brightness(1); opacity: 1; }
+            0% {
+                transform: scale(1.08);
+                filter: blur(14px) brightness(1.3);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                filter: blur(0px) brightness(1);
+                opacity: 1;
+            }
         }
+
         .animate-cinematic-reveal {
             animation: cinematicReveal 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
         @keyframes textFadeUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .animate-text-fade-up {
             opacity: 0;
             animation: textFadeUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -217,8 +243,11 @@
     <!-- Hero Section -->
     <section class="relative w-full h-screen flex items-center justify-center pt-24">
         <!-- Cinematic Image Background -->
-        <div class="absolute inset-0 z-0 overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);">
-            <img src="img/hero-sketch.jpg?v=2" alt="Architecture Sketch" class="w-full h-full object-cover object-center animate-cinematic-reveal" style="opacity: 0.75; filter: brightness(1.15) saturate(0.7);">
+        <div class="absolute inset-0 z-0 overflow-hidden"
+            style="-webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%); mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);">
+            <img src="img/hero-sketch.jpg?v=2" alt="Architecture Sketch"
+                class="w-full h-full object-cover object-center animate-cinematic-reveal"
+                style="opacity: 0.75; filter: brightness(1.15) saturate(0.7);">
             <!-- Dusty Pink Warm Overlay -->
             <div class="absolute inset-0" style="background: rgba(216,167,177,0.35);"></div>
             <!-- Soft White Haze to fade the image -->
@@ -239,15 +268,21 @@
                 </div>
 
                 <!-- Column 3: Refined About Teaser (Right side) -->
-                <div class="hidden lg:flex items-center border-l border-black/15 pl-12 h-fit animate-text-fade-up" style="animation-delay: 1.8s;">
+                <div class="hidden lg:flex items-center border-l border-black/15 pl-12 h-fit animate-text-fade-up"
+                    style="animation-delay: 1.8s;">
                     <div class="max-w-[260px] text-left py-2">
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-medium mb-4">Introduction</p>
-                        <p class="text-base font-light leading-relaxed mb-8 text-black opacity-100">
-                            Undergraduate architecture student investigating the future of spatial experience through material narrative and conceptual iteration.
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-terracotta font-medium mb-4">Introduction
                         </p>
-                        <a href="#about" class="group relative inline-flex items-center gap-2 text-lg font-serif italic text-ink hover:text-terracotta transition-all duration-500">
-                            More about me <span class="group-hover:translate-x-2 transition-transform duration-500">→</span>
-                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-terracotta transition-all duration-500 group-hover:w-full"></span>
+                        <p class="text-base font-light leading-relaxed mb-8 text-black opacity-100">
+                            Undergraduate architecture student investigating the future of spatial experience through
+                            material narrative and conceptual iteration.
+                        </p>
+                        <a href="#about"
+                            class="group relative inline-flex items-center gap-2 text-lg font-serif italic text-ink hover:text-terracotta transition-all duration-500">
+                            More about me <span
+                                class="group-hover:translate-x-2 transition-transform duration-500">→</span>
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-px bg-terracotta transition-all duration-500 group-hover:w-full"></span>
                         </a>
                     </div>
                 </div>
@@ -325,13 +360,16 @@
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <p class="text-xs uppercase tracking-widest text-terracotta mb-2 font-medium">Architectural Study</p>
+                            <p class="text-xs uppercase tracking-widest text-terracotta mb-2 font-medium">Architectural
+                                Study</p>
                             <h3 class="text-3xl font-serif project-title transition-all">Villa Piovene Study</h3>
                         </div>
-                        <i data-lucide="arrow-right" class="arrow-icon group-hover:translate-x-1 transition-transform"></i>
+                        <i data-lucide="arrow-right"
+                            class="arrow-icon group-hover:translate-x-1 transition-transform"></i>
                     </div>
                     <p class="mt-4 text-sm font-light leading-relaxed opacity-60 max-w-sm">
-                        A case study of Villa Piovene, exploring its Palladian proportions, classical spatial order, and the logic of architectural composition.
+                        A case study of Villa Piovene, exploring its Palladian proportions, classical spatial order, and
+                        the logic of architectural composition.
                     </p>
                 </a>
 
@@ -346,7 +384,8 @@
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <p class="text-xs uppercase tracking-widest text-terracotta mb-2 font-medium">In Progress</p>
+                            <p class="text-xs uppercase tracking-widest text-terracotta mb-2 font-medium">In Progress
+                            </p>
                             <h3 class="text-3xl font-serif project-title transition-all">Project 04</h3>
                         </div>
                         <i data-lucide="arrow-right" class="arrow-icon"></i>
@@ -369,61 +408,83 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">                <!-- Research 1 — Real Essay (compact card, opens modal) -->
-                <div onclick="document.getElementById('essay-modal').classList.remove('hidden')" class="glass-card p-10 rounded-[32px] flex flex-col h-full cursor-pointer hover:shadow-lg transition-shadow group">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Research 1 — Real Essay (compact card, opens modal) -->
+                <div onclick="document.getElementById('essay-modal').classList.remove('hidden')"
+                    class="glass-card p-10 rounded-[32px] flex flex-col h-full cursor-pointer hover:shadow-lg transition-shadow group">
                     <div class="flex justify-between items-start mb-8">
                         <span class="text-xs uppercase tracking-widest text-terracotta font-medium">2025</span>
-                        <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black/5 transition-colors">
+                        <div
+                            class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black/5 transition-colors">
                             <i data-lucide="file-text" class="w-4 h-4 opacity-40"></i>
                         </div>
                     </div>
                     <h3 class="text-2xl font-serif mb-2">Public Space &amp; Urban Identity in Tehran</h3>
                     <p class="text-xs uppercase tracking-widest opacity-40 mb-6">Architectural Research — ARCH 458M</p>
                     <p class="text-sm font-light leading-relaxed opacity-70 mb-8 flex-grow">
-                        An analysis of how three landmark public spaces in Tehran reflect the tension between tradition and modernity in Iranian urban culture.
+                        An analysis of how three landmark public spaces in Tehran reflect the tension between tradition
+                        and modernity in Iranian urban culture.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Public Space</span>
-                        <span class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Urban Identity</span>
-                        <span class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Tehran</span>
+                        <span
+                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Public
+                            Space</span>
+                        <span
+                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Urban
+                            Identity</span>
+                        <span
+                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Tehran</span>
                     </div>
                 </div>
 
                 <!-- Essay Modal -->
-                <div id="essay-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-6" onclick="if(event.target===this)this.classList.add('hidden')">
+                <div id="essay-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-6"
+                    onclick="if(event.target===this)this.classList.add('hidden')">
                     <!-- Backdrop -->
                     <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
                     <!-- Panel -->
-                    <div class="relative bg-[#F5F5F0] rounded-[32px] max-w-2xl w-full max-h-[90vh] overflow-y-auto p-10 md:p-14 shadow-2xl">
+                    <div
+                        class="relative bg-[#F5F5F0] rounded-[32px] max-w-2xl w-full max-h-[90vh] overflow-y-auto p-10 md:p-14 shadow-2xl">
                         <!-- Close -->
-                        <button onclick="document.getElementById('essay-modal').classList.add('hidden')" class="absolute top-6 right-6 w-10 h-10 rounded-full border border-black/10 flex items-center justify-center hover:bg-black/5 transition-colors">
+                        <button onclick="document.getElementById('essay-modal').classList.add('hidden')"
+                            class="absolute top-6 right-6 w-10 h-10 rounded-full border border-black/10 flex items-center justify-center hover:bg-black/5 transition-colors">
                             <i data-lucide="x" class="w-4 h-4 opacity-50"></i>
                         </button>
                         <!-- Header -->
-                        <p class="text-[10px] uppercase tracking-[0.3em] text-terracotta font-medium mb-4">Architectural Research — ARCH 458M &nbsp;·&nbsp; 2025</p>
-                        <h2 class="text-3xl md:text-4xl font-serif leading-tight mb-6">Public Space &amp; Urban Identity in Tehran</h2>
+                        <p class="text-[10px] uppercase tracking-[0.3em] text-terracotta font-medium mb-4">Architectural
+                            Research — ARCH 458M &nbsp;·&nbsp; 2025</p>
+                        <h2 class="text-3xl md:text-4xl font-serif leading-tight mb-6">Public Space &amp; Urban Identity
+                            in Tehran</h2>
                         <!-- Abstract -->
                         <p class="text-sm font-light leading-relaxed opacity-70 mb-10">
-                            This paper examines how three landmark public spaces in Tehran — the Azadi Monument, Tabiat Bridge, and Ferdows Garden — reflect the tension between tradition and modernity in Iranian urban culture. Through architectural analysis and historical context, it argues that public space in Tehran operates as both a political symbol and a site of everyday social life, shaped by layers of cultural memory and contemporary urban need.
+                            This paper examines how three landmark public spaces in Tehran — the Azadi Monument, Tabiat
+                            Bridge, and Ferdows Garden — reflect the tension between tradition and modernity in Iranian
+                            urban culture. Through architectural analysis and historical context, it argues that public
+                            space in Tehran operates as both a political symbol and a site of everyday social life,
+                            shaped by layers of cultural memory and contemporary urban need.
                         </p>
                         <!-- What you'll learn -->
                         <p class="text-[10px] uppercase tracking-widest opacity-40 mb-4">What you'll learn</p>
                         <ul class="space-y-4 mb-10">
                             <li class="flex items-start gap-3 text-sm font-light opacity-70">
                                 <span class="text-terracotta mt-0.5 shrink-0">—</span>
-                                How the <strong class="font-medium opacity-90">Azadi Monument</strong> embodies a dual architectural identity rooted in Persian and modern tradition
+                                How the <strong class="font-medium opacity-90">Azadi Monument</strong> embodies a dual
+                                architectural identity rooted in Persian and modern tradition
                             </li>
                             <li class="flex items-start gap-3 text-sm font-light opacity-70">
                                 <span class="text-terracotta mt-0.5 shrink-0">—</span>
-                                How <strong class="font-medium opacity-90">Tabiat Bridge</strong> redefines pedestrian public space within a dense urban fabric
+                                How <strong class="font-medium opacity-90">Tabiat Bridge</strong> redefines pedestrian
+                                public space within a dense urban fabric
                             </li>
                             <li class="flex items-start gap-3 text-sm font-light opacity-70">
                                 <span class="text-terracotta mt-0.5 shrink-0">—</span>
-                                How <strong class="font-medium opacity-90">Ferdows Garden</strong> situates cultural memory within the city's evolving landscape
+                                How <strong class="font-medium opacity-90">Ferdows Garden</strong> situates cultural
+                                memory within the city's evolving landscape
                             </li>
                             <li class="flex items-start gap-3 text-sm font-light opacity-70">
                                 <span class="text-terracotta mt-0.5 shrink-0">—</span>
-                                The role of public space as an expression of <strong class="font-medium opacity-90">collective identity and civic life</strong>
+                                The role of public space as an expression of <strong
+                                    class="font-medium opacity-90">collective identity and civic life</strong>
                             </li>
                         </ul>
                         <!-- Actions -->
@@ -435,58 +496,59 @@
                             </a>
                         </div>
                     </div>
-                </div>            </div>
-
-                <!-- Research 2 -->
-                <div class="glass-card p-10 rounded-[32px] flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-8">
-                        <span class="text-xs uppercase tracking-widest text-terracotta font-medium">2023</span>
-                        <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-4 h-4 opacity-40"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-serif mb-4">The Sound of Silence</h3>
-                    <p class="text-xs uppercase tracking-widest opacity-40 mb-6">Acoustic Architecture</p>
-                    <p class="text-sm font-light leading-relaxed opacity-70 mb-8 flex-grow">
-                        Research into the relationship between spatial geometry and acoustic comfort in public libraries
-                        and study spaces.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Acoustics</span>
-                        <span
-                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Public
-                            Space</span>
-                        <span
-                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Geometry</span>
-                    </div>
-                </div>
-
-                <!-- Research 3 -->
-                <div class="glass-card p-10 rounded-[32px] flex flex-col h-full">
-                    <div class="flex justify-between items-start mb-8">
-                        <span class="text-xs uppercase tracking-widest text-terracotta font-medium">2022</span>
-                        <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
-                            <i data-lucide="file-text" class="w-4 h-4 opacity-40"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-serif mb-4">Light & Well-being</h3>
-                    <p class="text-xs uppercase tracking-widest opacity-40 mb-6">Circadian Lighting</p>
-                    <p class="text-sm font-light leading-relaxed opacity-70 mb-8 flex-grow">
-                        Investigating the impact of natural light modulation on the mental health and productivity of
-                        office workers.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Health</span>
-                        <span
-                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Lighting</span>
-                        <span
-                            class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Interior
-                            Design</span>
-                    </div>
                 </div>
             </div>
+
+            <!-- Research 2 -->
+            <div class="glass-card p-10 rounded-[32px] flex flex-col h-full">
+                <div class="flex justify-between items-start mb-8">
+                    <span class="text-xs uppercase tracking-widest text-terracotta font-medium">2023</span>
+                    <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
+                        <i data-lucide="file-text" class="w-4 h-4 opacity-40"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">The Sound of Silence</h3>
+                <p class="text-xs uppercase tracking-widest opacity-40 mb-6">Acoustic Architecture</p>
+                <p class="text-sm font-light leading-relaxed opacity-70 mb-8 flex-grow">
+                    Research into the relationship between spatial geometry and acoustic comfort in public libraries
+                    and study spaces.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Acoustics</span>
+                    <span
+                        class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Public
+                        Space</span>
+                    <span
+                        class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Geometry</span>
+                </div>
+            </div>
+
+            <!-- Research 3 -->
+            <div class="glass-card p-10 rounded-[32px] flex flex-col h-full">
+                <div class="flex justify-between items-start mb-8">
+                    <span class="text-xs uppercase tracking-widest text-terracotta font-medium">2022</span>
+                    <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center">
+                        <i data-lucide="file-text" class="w-4 h-4 opacity-40"></i>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Light & Well-being</h3>
+                <p class="text-xs uppercase tracking-widest opacity-40 mb-6">Circadian Lighting</p>
+                <p class="text-sm font-light leading-relaxed opacity-70 mb-8 flex-grow">
+                    Investigating the impact of natural light modulation on the mental health and productivity of
+                    office workers.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span
+                        class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Health</span>
+                    <span
+                        class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Lighting</span>
+                    <span
+                        class="text-[10px] uppercase tracking-widest bg-black/5 px-3 py-1 rounded-full opacity-60">Interior
+                        Design</span>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -496,8 +558,8 @@
             <div class="order-2 lg:order-1">
                 <div class="relative aspect-square max-w-md mx-auto">
                     <div class="absolute inset-0 bg-olive/10 rounded-3xl rotate-3"></div>
-                    <img src="img/profile.jpg?v=1"
-                        alt="Architect Profile" class="relative z-10 w-full h-full object-cover rounded-3xl shadow-xl">
+                    <img src="img/profile.jpg?v=1" alt="Architect Profile"
+                        class="relative z-10 w-full h-full object-cover rounded-3xl shadow-xl">
                 </div>
             </div>
             <div class="order-1 lg:order-2">
